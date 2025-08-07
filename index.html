@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MobileFix - Premium Mobile Repair Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #295be4, #60a5fa);
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-bg {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .hero-bg dotlottie-wc {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Responsive typography */
+    .hero-bg h2 {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+
+    .hero-bg p {
+      font-size: clamp(1.125rem, 4vw, 1.5rem);
+    }
+
+    /* Smooth scroll for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Mobile menu transition */
+    #mobile-menu {
+      transition: max-height 0.3s ease-in-out;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    #mobile-menu:not(.hidden) {
+      max-height: 300px;
+    }
+
+    /* Mail-In section styling */
+    #mail-in {
+      background: linear-gradient(180deg, #f8fafc, #e2e8f0); /* Subtle gradient */
+      position: relative;
+    }
+
+    .mailin-lottie {
+      display: block;
+      margin: 0 auto 2rem;
+      width: clamp(250px, 60vw, 350px);
+      height: clamp(250px, 60vw, 350px);
+      border-radius: 50%; /* Circular mask */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .mailin-lottie:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+    }
+  </style>
+</head>
+<body class="text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold tracking-tight">MobileFix</h1>
+      <nav class="space-x-8 hidden md:flex">
+        <a href="#home" class="hover:text-blue-300 transition">Home</a>
+        <a href="#services" class="hover:text-blue-300 transition">Services</a>
+        <a href="#mail-in" class="hover:text-blue-300 transition">Mail-In Repair</a>
+        <a href="#contact" class="hover:text-blue-300 transition">Contact</a>
+      </nav>
+      <div class="md:hidden">
+        <button aria-label="Toggle navigation menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800 text-white px-4 py-2">
+      <a href="#home" class="block py-2 hover:text-blue-300">Home</a>
+      <a href="#services" class="block py-2 hover:text-blue-300">Services</a>
+      <a href="#mail-in" class="block py-2 hover:text-blue-300">Mail-In Repair</a>
+      <a href="#contact" class="block py-2 hover:text-blue-300">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-bg text-center text-white">
+    <dotlottie-wc
+      src="https://lottie.host/1a72780f-0936-426a-9718-2852502e119d/zUDseYGKXM.lottie"
+      speed="1"
+      autoplay
+      loop
+    ></dotlottie-wc>
+    <div class="max-w-4xl mx-auto px-4 py-16 md:py-24 relative z-10">
+      <h2 class="font-extrabold mb-6">Expert Mobile Repairs, Anywhere</h2>
+      <p class="mb-8">Over 5+ years of professional experience. Fast, reliable, and affordable repairs for all brands, with convenient mail-in service.</p>
+      <a href="#contact" class="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition text-lg font-semibold inline-block">Book a Repair Now</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="max-w-6xl mx-auto py-16 px-4">
+    <h3 class="text-4xl font-extrabold text-center mb-12 text-white">Our Services</h3>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="p-6 bg-white rounded-lg shadow-lg card-hover">
+        <h4 class="text-2xl font-semibold mb-3 text-blue-800">Screen Replacement</h4>
+        <p>Fix cracked or broken screens with high-quality, original parts for all models.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow-lg card-hover">
+        <h4 class="text-2xl font-semibold mb-3 text-blue-800">Battery Replacement</h4>
+        <p>Restore your phone’s battery life with our quick replacement service.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow-lg card-hover">
+        <h4 class="text-2xl font-semibold mb-3 text-blue-800">Water Damage Repair</h4>
+        <p>Expert recovery for phones affected by water exposure.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow-lg card-hover">
+        <h4 class="text-2xl font-semibold mb-3 text-blue-800">Charging Port Repair</h4>
+        <p>Precision fixes for charging issues and loose connections.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow-lg card-hover">
+        <h4 class="text-2xl font-semibold mb-3 text-blue-800">Camera Repair</h4>
+        <p>Restore clarity to blurry or malfunctioning cameras.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow-lg card-hover">
+        <h4 class="text-2xl font-semibold mb-3 text-blue-800">Software Issues</h4>
+        <p>Resolve OS crashes, boot loops, and software update problems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mail-In Repair Section -->
+  <section id="mail-in" class="py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-4xl font-extrabold mb-6 text-blue-900">Mail-In Repair Service</h3>
+      <dotlottie-wc
+        src="https://lottie.host/83205c83-be79-4364-a2bb-997bb2d2373f/UABya43G1Y.lottie"
+        class="mailin-lottie"
+        speed="1"
+        autoplay
+        loop
+      ></dotlottie-wc>
+      <p class="text-lg md:text-xl mb-8 text-gray-800">Can’t visit us? No problem! Send your device to our repair center, and we’ll fix it and ship it back to you in no time.</p>
+      <div class="text-left max-w-2xl mx-auto space-y-6">
+        <div>
+          <h4 class="text-xl font-semibold text-blue-800">How It Works</h4>
+          <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+            <li>Fill out the repair form below to describe your device’s issue.</li>
+            <li>Ship your device to: <strong>5/30 Middle Street, Avaniconanthal, Thiruvenkudam, Tenkasi(Dist)</strong>.</li>
+            <li>We diagnose and repair your device using top-quality parts.</li>
+            <li>Your device is shipped back to you, fully repaired and tested.</li>
+          </ol>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold text-blue-800">Why Choose Our Mail-In Service?</h4>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Free return shipping on all repairs.</li>
+            <li>90-day warranty on all parts and labor.</li>
+            <li>Secure packaging guidance provided.</li>
+          </ul>
+        </div>
+      </div>
+      <a href="#contact" class="mt-8 inline-block bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition text-lg font-semibold">Start Your Mail-In Repair</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h3 class="text-4xl font-extrabold text-center mb-8 text-white">Book a Repair</h3>
+      <form
+        action="hhttps://formspree.io/f/xjkopkkk"
+        method="POST"
+        enctype="multipart/form-data"
+        class="space-y-6 bg-white p-8 rounded-lg shadow-lg"
+      >
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500"/>
+        <input type="email" name="email" placeholder="Email Address" required class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500"/>
+        <input type="text" name="phone" placeholder="Phone Number" required class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500"/>
+        <input type="text" name="device" placeholder="Device Model (e.g., iPhone 13)" class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500"/>
+        <input type="text" name="Address" placeholder="Address (e.g., 5/30 middle street Avaniconanthal Tenkasi 627754)" class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500"/>
+        <textarea name="issue" rows="5" placeholder="Describe the issue" required class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500"></textarea>
+        <label>
+          Your file:
+          <input type="file" name="upload">
+        </label>
+        <div class="flex items-center">
+          <input type="checkbox" name="mail-in" class="mr-2 h-5 w-5"/>
+          <label>I want to use the mail-in repair service</label>
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition w-full md:w-auto">Submit Request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center p-6">
+    <p class="text-lg">© 2025 MobileFix. All rights reserved.</p>
+    <p class="mt-2">Contact us: <a href="mailto:vijaymech361@gmail.com" class="underline">vijaymech361@gmail.com</a> | 123 Repair Lane, Tech City, TC 12345</p>
+  </footer>
+</body>
+</html>
